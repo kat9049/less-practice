@@ -1,18 +1,18 @@
 //gulp gulp-less gulp-sourcemaps gulp-concat gulp-autoprefixer gulp-if browser-sync gulp-clean-css
 
-var gulp = require('gulp');
-var less = require('gulp-less');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCss = require('gulp-clean-css');
-var concat = require('gulp-concat');
-var gulpIf = require('gulp-if');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const less = require('gulp-less');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCss = require('gulp-clean-css');
+const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
+const gulpIf = require('gulp-if');
+const browserSync = require('browser-sync').create();
 
-var config = {
+const config = {
     paths:{
-        less: './src/less/**/*.less',
-        html: './src/public/index.html'
+        less: './src/less/*.less',
+        html: './public/index.html'
     },
     output: {
         path: './public',
@@ -36,7 +36,7 @@ gulp.task('less', function () {
 gulp.task('serve', function () {
     browserSync.init({
         server: {
-            baseDir:config.output.path
+            baseDir: config.output.path
         }
     });
 
